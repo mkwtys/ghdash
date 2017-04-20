@@ -1,0 +1,14 @@
+{
+  "presets": [
+    "flow",
+    "react",
+    ["env", {
+      "targets": {
+        "electron": "1.6.5"
+      }
+    }]
+  ],
+  "plugins": [
+    "transform-object-rest-spread"
+  ]
+}

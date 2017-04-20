@@ -1,7 +1,15 @@
 {
+  "parser": "babel-eslint",
+  "plugins": [
+    "flowtype",
+    "react"
+  ],
   "env": {
     "es6": true,
     "node": true
+  },
+  "ecmaFeatures": {
+    "jsx": true
   },
   "extends": "standard",
   "globals": {
@@ -12,6 +20,8 @@
     "prefer-const": "error",
     "semi": ["error", "always"],
     "space-before-function-paren": ["error", "never"],
-    "spaced-comment": "off"
+    "spaced-comment": "off",
+    "react/jsx-uses-react": "warn",
+    "react/jsx-uses-vars": "warn"
   }
 }

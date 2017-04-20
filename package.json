@@ -1,20 +1,35 @@
 {
-  "private": true,
   "name": "ghn",
+  "description": "Dashboard for GitHub",
   "version": "0.0.0",
-  "author": "mkwtys",
+  "author": "mkwtys <mkwtys@gmail.com>",
+  "private": true,
+  "dependencies": {
+    "react": "16.0.0-alpha.9",
+    "react-dom": "16.0.0-alpha.9"
+  },
   "devDependencies": {
+    "babel-cli": "6.24.1",
+    "babel-eslint": "7.2.2",
+    "babel-plugin-transform-object-rest-spread": "6.23.0",
+    "babel-preset-env": "1.4.0",
+    "babel-preset-flow": "6.23.0",
+    "babel-preset-react": "6.24.1",
     "electron": "1.6.5",
     "eslint": "3.19.0",
     "eslint-config-standard": "10.2.1",
+    "eslint-plugin-flowtype": "2.32.1",
     "eslint-plugin-import": "2.2.0",
     "eslint-plugin-node": "4.2.2",
     "eslint-plugin-promise": "3.5.0",
-    "eslint-plugin-standard": "3.0.1"
+    "eslint-plugin-react": "6.10.3",
+    "eslint-plugin-standard": "3.0.1",
+    "flow-bin": "0.44.2"
   },
   "license": "MIT",
-  "main": "main.js",
+  "main": "dist/main.js",
   "scripts": {
+    "build": "babel src -d dist",
     "start": "electron ."
   }
 }
