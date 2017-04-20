@@ -1,9 +1,9 @@
 {
+  "private": true,
   "name": "ghn",
   "description": "Dashboard for GitHub",
   "version": "0.0.0",
   "author": "mkwtys <mkwtys@gmail.com>",
-  "private": true,
   "dependencies": {
     "react": "16.0.0-alpha.9",
     "react-dom": "16.0.0-alpha.9"
@@ -27,9 +27,9 @@
     "flow-bin": "0.44.2"
   },
   "license": "MIT",
-  "main": "dist/main.js",
+  "main": "main.js",
   "scripts": {
     "build": "babel src -d dist",
-    "start": "electron ."
+    "start": "npm run build && electron ."
   }
 }
