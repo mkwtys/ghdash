@@ -5,8 +5,8 @@
   "version": "0.0.0",
   "author": "mkwtys <mkwtys@gmail.com>",
   "dependencies": {
-    "react": "16.0.0-alpha.9",
-    "react-dom": "16.0.0-alpha.9"
+    "react": "16.0.0-alpha.10",
+    "react-dom": "16.0.0-alpha.10"
   },
   "devDependencies": {
     "babel-cli": "6.24.1",

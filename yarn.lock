@@ -2344,18 +2344,18 @@ rc@^1.1.2, rc@^1.1.7:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
-react-dom@16.0.0-alpha.9:
-  version "16.0.0-alpha.9"
-  resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.0.0-alpha.9.tgz#8630250db53956b974220ddc11ce3e3cc4efff2b"
+react-dom@16.0.0-alpha.10:
+  version "16.0.0-alpha.10"
+  resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.0.0-alpha.10.tgz#bf1baf39f065ca3cfd696cd23a59b760442d9152"
   dependencies:
     fbjs "^0.8.9"
     loose-envify "^1.1.0"
     object-assign "^4.1.0"
     prop-types "^15.5.6"
 
-react@16.0.0-alpha.9:
-  version "16.0.0-alpha.9"
-  resolved "https://registry.yarnpkg.com/react/-/react-16.0.0-alpha.9.tgz#d7fe626bfdc1f69f373c8919d688f2e66e3b3642"
+react@16.0.0-alpha.10:
+  version "16.0.0-alpha.10"
+  resolved "https://registry.yarnpkg.com/react/-/react-16.0.0-alpha.10.tgz#dcdafa9f84437d2c7e06b234b86782d316298882"
   dependencies:
     create-react-class "^15.5.2"
     fbjs "^0.8.9"
