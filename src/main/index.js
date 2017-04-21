@@ -1,24 +1,30 @@
-/* @flow */
-import electron from 'electron';
-import path from 'path';
-import url from 'url';
+// @flow
+import { app, BrowserWindow } from 'electron';
+import Config from '../Config';
 
-const app = electron.app;
-const BrowserWindow = electron.BrowserWindow;
 let mainWindow;
 
+function saveWindowState() {
+  if (mainWindow && !mainWindow.isFullScreen()) {
+    Config.set('windowState', mainWindow.getBounds());
+  }
+}
+
 function createWindow() {
+  const windowState = Config.get('windowState');
   mainWindow = new BrowserWindow({
-    width: 1280,
-    height: 780,
+    x: windowState.x,
+    y: windowState.y,
+    width: windowState.width,
+    height: windowState.height,
     title: 'ghdash'
   });
 
-  mainWindow.loadURL(url.format({
-    pathname: path.join(__dirname, '../renderer/index.html'),
-    protocol: 'file:',
-    slashes: true
-  }));
+  mainWindow.loadURL(`file://${__dirname}/../renderer/index.html`);
+
+  mainWindow.once('close', () => {
+    saveWindowState();
+  });
 
   mainWindow.once('closed', () => {
     mainWindow = null;
@@ -39,4 +45,8 @@ app.on('activate', () => {
   if (mainWindow === null) {
     createWindow();
   }
+});
+
+app.on('before-quit', () => {
+  saveWindowState();
 });
