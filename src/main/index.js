@@ -1,5 +1,5 @@
 // @flow
-import { app, BrowserWindow } from 'electron';
+import { app, BrowserWindow, ipcMain } from 'electron';
 import Config from '../Config';
 
 let mainWindow;
@@ -49,4 +49,12 @@ app.on('activate', () => {
 
 app.on('before-quit', () => {
   saveWindowState();
+});
+
+ipcMain.on('signIn', (event) => {
+  console.log('signIn');
+});
+
+ipcMain.on('signOut', (event) => {
+  console.log('signOut');
 });
