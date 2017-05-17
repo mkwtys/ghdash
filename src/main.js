@@ -1,26 +1,32 @@
 // @flow
 import { app, BrowserWindow, ipcMain } from 'electron';
-import Config from '../Config';
+import ConfigRepository from './repository/ConfigRepository';
 
 let mainWindow;
 
 function saveWindowState() {
   if (mainWindow && !mainWindow.isFullScreen()) {
-    Config.set('windowState', mainWindow.getBounds());
+    const config = ConfigRepository.get();
+    ConfigRepository.save(
+      Object.assign({}, config, {
+        windowState: mainWindow.getBounds()
+      })
+    );
   }
 }
 
 function createWindow() {
-  const windowState = Config.get('windowState');
+  const config = ConfigRepository.get();
+  const { width, height, x, y } = config.getWindowState();
   mainWindow = new BrowserWindow({
-    x: windowState.x,
-    y: windowState.y,
-    width: windowState.width,
-    height: windowState.height,
+    width,
+    height,
+    x,
+    y,
     title: 'ghdash'
   });
 
-  mainWindow.loadURL(`file://${__dirname}/../renderer/index.html`);
+  mainWindow.loadURL(`file://${__dirname}/index.html`);
 
   mainWindow.once('close', () => {
     saveWindowState();
@@ -36,9 +42,9 @@ app.on('ready', () => {
 });
 
 app.on('window-all-closed', () => {
-  if (process.platform !== 'darwin') {
-    app.quit();
-  }
+  // if (process.platform !== 'darwin') {
+  app.quit();
+  // }
 });
 
 app.on('activate', () => {
@@ -51,10 +57,10 @@ app.on('before-quit', () => {
   saveWindowState();
 });
 
-ipcMain.on('signIn', (event) => {
+ipcMain.on('signIn', event => {
   console.log('signIn');
 });
 
-ipcMain.on('signOut', (event) => {
+ipcMain.on('signOut', event => {
   console.log('signOut');
 });

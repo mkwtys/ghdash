@@ -35,7 +35,7 @@
   "license": "MIT",
   "main": "index.js",
   "scripts": {
-    "build": "babel src -d app && cpx \"src/renderer/index.html\" app/renderer",
+    "build": "babel src -d app && cpx \"src/index.html\" app/",
     "start": "npm run build && electron ."
   }
 }
