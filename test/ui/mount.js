@@ -1,7 +1,7 @@
 // @flow
 import assert from 'assert';
 import React from 'react';
-import mount from 'src/ui/mount';
+import mount from 'ui/mount';
 
 describe('ui/mount', () => {
   it('mount to element', async () => {
