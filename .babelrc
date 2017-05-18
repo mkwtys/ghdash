@@ -10,5 +10,17 @@
   ],
   "plugins": [
     "transform-object-rest-spread"
-  ]
+  ],
+  "env": {
+    "test": {
+      "presets": [
+        ["env", {
+          "targets": {
+            "node": 6
+          }
+        }],
+        "power-assert"
+      ]
+    }
+  }
 }
