@@ -1,7 +1,13 @@
 // @flow
 import React from 'react';
 
-export default function HelloWorldComponent(props) {
+type Props = {
+  node?: ?string,
+  chrome?: ?string,
+  electron?: ?string
+};
+
+export default function HelloWorldComponent(props: Props) {
   return (
     <div>
       <div>Hello World!</div>

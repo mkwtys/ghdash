@@ -1,12 +1,6 @@
 // @flow
-export default class OAuth {
-  accessToken: string;
+export type AccessToken = string;
 
-  constructor({ accessToken }) {
-    this.accessToken = accessToken;
-  }
-
-  getAccessToken(): string {
-    return this.accessToken;
-  }
-}
+export type OAuth = {
+  accessToken?: ?AccessToken
+};
