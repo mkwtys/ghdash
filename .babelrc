@@ -4,12 +4,9 @@
     "react",
     ["env", {
       "targets": {
-        "electron": "1.6.5"
+        "electron": "1.6.8"
       }
     }]
-  ],
-  "plugins": [
-    "transform-object-rest-spread"
   ],
   "env": {
     "test": {
