@@ -1,0 +1,14 @@
+// @flow
+declare module 'electron-config' {
+  declare export default class Config {
+    size: number;
+    store: {};
+    path: string;
+    set(key: string, value: any): void;
+    set(object: {}): void;
+    delete(key: string): void;
+    get(key: string): any;
+    has(key: string): boolean;
+    clear(): void;
+  }
+}
