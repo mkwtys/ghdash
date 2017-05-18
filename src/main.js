@@ -16,8 +16,7 @@ function saveWindowState() {
 }
 
 function createWindow() {
-  const config = ConfigRepository.get();
-  const { width, height, x, y } = config.getWindowState();
+  const { width, height, x, y } = ConfigRepository.get().windowState;
   mainWindow = new BrowserWindow({
     width,
     height,

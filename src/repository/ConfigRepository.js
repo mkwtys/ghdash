@@ -1,6 +1,6 @@
 // @flow
 import ElectronConfig from 'electron-config';
-import Config from '../domain/config/Config';
+import type { Config } from '../domain/config/Config';
 
 export class ConfigRepository {
   database: ElectronConfig;
@@ -10,8 +10,7 @@ export class ConfigRepository {
   }
 
   get(): Config {
-    const config = this.database.get('config');
-    return new Config(config);
+    return this.database.get('config');
   }
 
   save(config: Config) {

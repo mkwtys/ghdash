@@ -3,4 +3,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import mount from './ui/mount';
 
-mount(document.querySelector('.root'));
+const el = document.querySelector('.root');
+if (!el) {
+  throw new Error('no .root');
+}
+mount(el);
