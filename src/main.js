@@ -7,11 +7,10 @@ let mainWindow;
 function saveWindowState() {
   if (mainWindow && !mainWindow.isFullScreen()) {
     const config = ConfigRepository.get();
-    ConfigRepository.save(
-      Object.assign({}, config, {
-        windowState: mainWindow.getBounds()
-      })
-    );
+    ConfigRepository.save({
+      ...config,
+      windowState: mainWindow.getBounds()
+    });
   }
 }
 
