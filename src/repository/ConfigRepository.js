@@ -1,16 +1,23 @@
 // @flow
 import ElectronConfig from 'electron-config';
+import isElectron from '../util/isElectron';
 import type { Config } from '../domain/config/Config';
 
-export class ConfigRepository {
-  database: ElectronConfig;
+type Database = ElectronConfig | Map<string, Config>;
 
-  constructor(database: ElectronConfig) {
+export class ConfigRepository {
+  database: Database;
+
+  constructor(database: Database) {
     this.database = database;
   }
 
   get(): Config {
-    return this.database.get('config');
+    const config: ?Config = this.database.get('config');
+    if (!config) {
+      throw new Error('no config');
+    }
+    return config;
   }
 
   save(config: Config) {
@@ -18,8 +25,9 @@ export class ConfigRepository {
   }
 }
 
-export default new ConfigRepository(
-  new ElectronConfig({
+let database: Database = new Map();
+if (isElectron()) {
+  database = new ElectronConfig({
     defaults: {
       config: {
         oauth: {
@@ -31,5 +39,7 @@ export default new ConfigRepository(
         }
       }
     }
-  })
-);
+  });
+}
+
+export default new ConfigRepository(database);
