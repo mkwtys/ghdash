@@ -29,7 +29,7 @@
     "mocha": "3.4.2",
     "nyc": "11.0.3",
     "power-assert": "1.4.4",
-    "prettier": "1.5.1",
+    "prettier": "1.5.2",
     "raf": "3.3.2"
   },
   "license": "MIT",
