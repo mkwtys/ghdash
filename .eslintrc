@@ -1,5 +1,10 @@
 {
   "parser": "babel-eslint",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
   "plugins": [
     "flowtype",
     "prettier",
@@ -8,9 +13,6 @@
   "env": {
     "es6": true,
     "node": true
-  },
-  "ecmaFeatures": {
-    "jsx": true
   },
   "extends": [
     "prettier",
