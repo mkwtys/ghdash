@@ -1,6 +1,6 @@
 // @flow
-import { app, BrowserWindow, ipcMain } from 'electron';
-import ConfigRepository from './repository/ConfigRepository';
+import { app, BrowserWindow, ipcMain } from "electron";
+import ConfigRepository from "./repository/ConfigRepository";
 
 let mainWindow;
 
@@ -21,44 +21,44 @@ function createWindow() {
     height,
     x,
     y,
-    title: 'ghdash'
+    title: "ghdash"
   });
 
   mainWindow.loadURL(`file://${__dirname}/index.html`);
 
-  mainWindow.once('close', () => {
+  mainWindow.once("close", () => {
     saveWindowState();
   });
 
-  mainWindow.once('closed', () => {
+  mainWindow.once("closed", () => {
     mainWindow = null;
   });
 }
 
-app.on('ready', () => {
+app.on("ready", () => {
   createWindow();
 });
 
-app.on('window-all-closed', () => {
+app.on("window-all-closed", () => {
   // if (process.platform !== 'darwin') {
   app.quit();
   // }
 });
 
-app.on('activate', () => {
+app.on("activate", () => {
   if (mainWindow === null) {
     createWindow();
   }
 });
 
-app.on('before-quit', () => {
+app.on("before-quit", () => {
   saveWindowState();
 });
 
-ipcMain.on('signIn', event => {
-  console.log('signIn');
+ipcMain.on("signIn", event => {
+  console.log("signIn");
 });
 
-ipcMain.on('signOut', event => {
-  console.log('signOut');
+ipcMain.on("signOut", event => {
+  console.log("signOut");
 });

@@ -1,7 +1,7 @@
 // @flow
-import ElectronConfig from 'electron-config';
-import isElectron from '../util/isElectron';
-import type { Config } from '../domain/config/Config';
+import ElectronConfig from "electron-config";
+import isElectron from "../util/isElectron";
+import type { Config } from "../domain/config/Config";
 
 type Database = ElectronConfig | Map<string, Config>;
 
@@ -13,15 +13,15 @@ export class ConfigRepository {
   }
 
   get(): Config {
-    const config: ?Config = this.database.get('config');
+    const config: ?Config = this.database.get("config");
     if (!config) {
-      throw new Error('no config');
+      throw new Error("no config");
     }
     return config;
   }
 
   save(config: Config) {
-    this.database.set('config', config);
+    this.database.set("config", config);
   }
 }
 

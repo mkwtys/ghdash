@@ -1,12 +1,12 @@
-import assert from 'assert';
-import isElectron from 'util/isElectron';
+import assert from "assert";
+import isElectron from "util/isElectron";
 
-describe('util/isElectron', () => {
-  it('should return false in Node.js', () => {
+describe("util/isElectron", () => {
+  it("should return false in Node.js", () => {
     assert(isElectron() === false);
   });
 
-  it('should return true when window.process.type is renderer', () => {
+  it("should return true when window.process.type is renderer", () => {
     let orgWindowProcess;
     let orgWindowProcessType;
     if (window.process && window.process.type) {
@@ -14,7 +14,7 @@ describe('util/isElectron', () => {
       orgWindowProcessType = window.process.type;
     }
     window.process = {
-      type: 'renderer'
+      type: "renderer"
     };
     assert(isElectron() === true);
     if (orgWindowProcess) {
