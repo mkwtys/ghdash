@@ -20,5 +20,6 @@
   "globals": {
   },
   "rules": {
+    "prettier/prettier": ["error"]
   }
 }
