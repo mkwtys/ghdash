@@ -16,7 +16,7 @@
     "babel-preset-flow": "6.23.0",
     "babel-preset-power-assert": "1.0.0",
     "babel-preset-react": "6.24.1",
-    "babel-register": "6.24.1",
+    "babel-register": "6.26.0",
     "cpx": "1.5.0",
     "electron": "1.6.11",
     "eslint": "4.2.0",
