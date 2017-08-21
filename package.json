@@ -22,7 +22,7 @@
     "eslint": "4.5.0",
     "eslint-config-prettier": "2.3.0",
     "eslint-plugin-flowtype": "2.35.0",
-    "eslint-plugin-prettier": "2.1.2",
+    "eslint-plugin-prettier": "2.2.0",
     "eslint-plugin-react": "7.1.0",
     "flow-bin": "0.53.1",
     "jsdom": "11.0.0",
