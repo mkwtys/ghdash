@@ -30,7 +30,7 @@
     "nyc": "11.2.0",
     "power-assert": "1.4.4",
     "prettier": "1.6.1",
-    "raf": "3.3.2"
+    "raf": "3.4.0"
   },
   "license": "MIT",
   "main": "index.js",
